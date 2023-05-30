@@ -1,0 +1,8 @@
+name: pamdebug
+services:
+  server:
+    build:
+      dockerfile: Dockerfile
+    hostname: pamdebug
+    ports:
+      - 127.0.0.1:2222:22

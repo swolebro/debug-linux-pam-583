@@ -1,0 +1,3 @@
+PermitRootLogin yes
+UsePAM yes
+AuthenticationMethods keyboard-interactive:pam
