@@ -1,0 +1,15 @@
+#%PAM-1.0
+
+auth     requisite                      pam_faillock.so preauth
+auth     [success=3 default=ignore]     pam_exec.so expose_authtok /bin/true
+auth     required                       pam_echo.so "I jump right over this."
+auth     [success=1 default=bad]        pam_unix.so
+auth     [default=die]                  pam_faillock.so authfail
+auth     required                       pam_faillock.so authsucc
+
+# Standard rules, replacing the base-auth with our own above.
+#auth      include    base-auth
+account   include    base-account
+password  include    base-password
+session   include    base-session
+
