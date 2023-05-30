@@ -1,1 +1,1 @@
-02-pam_unix-works-fine.pam
+03-no-permission-error-without-die.pam
